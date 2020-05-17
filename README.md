@@ -6,3 +6,4 @@ Comparable webservices are bloated up with ads and unnecessary javascript. You c
 ## ToDo
 - GeoIP
 - Name variables better
+- Message if PTR is not resolvable
