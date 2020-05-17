@@ -7,3 +7,4 @@ Comparable webservices are bloated up with ads and unnecessary javascript. You c
 - GeoIP
 - Name variables better
 - Message if PTR is not resolvable
+- Store URLs in vars
