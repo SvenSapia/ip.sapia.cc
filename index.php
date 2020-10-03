@@ -14,17 +14,30 @@
         $ipaddress = $_SERVER['REMOTE_ADDR'];
     else
 	$ipaddress = 'UNKNOWN';
-
-    echo $preopen = '<pre>';
-    echo $textip = 'Your IP is:  ';
-    echo $ipaddress;
-    echo "<br><br>";
-
+    
     $ptr = gethostbyaddr($ipaddress);
-    echo $textptr = 'Your PTR is: ';
-    echo $ptr;
-    echo "<br><br>";
+    if (empty($ptr)){
+    	$ptr = 'UNKOWN';
+    }
 
-    echo $linklist = '<a href="http://ip.v4.sapia.cc">IPv4 only</a> | <a href="http://ip.v6.sapia.cc">IPv6 only</a> | <a href="http://ip.sapia.cc">Both</a>';
-    echo $preclose = '</pre>';
+    if (isset($_SERVER['HTTP_USER_AGENT']) && preg_match('/^(curl|wget)/i', $_SERVER['HTTP_USER_AGENT'])) {
+	echo 'Your IP is: ';
+	echo $ipaddress;
+	echo ' and your PTR: ';
+	echo $ptr;
+	echo  "\n";
+    }
+    else {
+    	echo '<pre>';
+    	echo 'Your IP is:  ';
+    	echo $ipaddress;
+    	echo "<br><br>";
+	
+    	echo 'Your PTR is: ';
+    	echo $ptr;
+    	echo "<br><br>";
+
+    	echo  '<a href="http://ip.v4.sapia.cc">IPv4 only</a> | <a href="http://ip.v6.sapia.cc">IPv6 only</a> | <a href="http://ip.sapia.cc">Both</a>';
+    	echo  '</pre>';
+    }
 ?>
