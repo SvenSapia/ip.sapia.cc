@@ -6,9 +6,3 @@ Comparable webservices are bloated up with ads and unnecessary javascript. You c
 ## ToDo
 - GeoIP and/or RIR lookup
 - Store URLs in vars, so it's easier to setup
-=======
-- GeoIP
-- Name variables better
-- Message if PTR is not resolvable
-- Store URLs in vars
-- Detect cURL users -> Hide HTML tags
